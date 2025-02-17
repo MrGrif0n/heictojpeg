@@ -1,0 +1,12 @@
+#!/bin/bash
+# Determine the directory where this script is located
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Activate the virtual environment located in the same folder
+source "$SCRIPT_DIR/myenv/bin/activate"
+
+# Run the Python script with all command-line arguments
+python "$SCRIPT_DIR/heictojpeg.py" "$@"
+
+# Deactivate the virtual environment
+deactivate
