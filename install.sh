@@ -1,8 +1,8 @@
 #!/bin/bash
-# Installer for heictopng
+# Installer for heictojpeg
 # This script:
 #   1. Sets up the virtual environment (myenv) and installs required packages.
-#   2. Adds an alias for the heictopng command to your shell configuration file(s).
+#   2. Adds an alias for the heictojpeg command to your shell configuration file(s).
 
 # Determine the directory where this script is located.
 INSTALL_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -39,7 +39,7 @@ echo "Virtual environment is set up and required packages are installed."
 # -------------------------------
 # Step 2: Add Alias to Shell Config
 # -------------------------------
-ALIAS_LINE="alias heictopng='${INSTALL_DIR}/heictopng'"
+ALIAS_LINE="alias heictojpeg='${INSTALL_DIR}/heictojpeg'"
 echo "Preparing to add alias: ${ALIAS_LINE}"
 
 # List of configuration files to update.
@@ -57,8 +57,8 @@ if [ ${#CONFIG_FILES[@]} -eq 0 ]; then
 else
     for config in "${CONFIG_FILES[@]}"; do
         echo "Updating ${config}..."
-        # Check if an alias for heictopng already exists
-        if grep -q "alias heictopng=" "$config"; then
+        # Check if an alias for heictojpeg already exists
+        if grep -q "alias heictojpeg=" "$config"; then
             echo "Alias already exists in ${config}. Skipping."
         else
             echo "$ALIAS_LINE" >> "$config"
@@ -68,4 +68,4 @@ else
 fi
 
 echo "Installation complete!"
-echo "Please restart your terminal or run 'source ~/.bashrc' (or 'source ~/.zshrc') to start using the 'heictopng' command."
+echo "Please restart your terminal or run 'source ~/.bashrc' (or 'source ~/.zshrc') to start using the 'heictojpeg' command."
