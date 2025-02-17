@@ -14,7 +14,7 @@ def convert_heic_to_jpeg(input_path, output_path):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: heictopng file1 [file2 ...] [output_folder]")
+        print("Usage: heictojpeg file1 [file2 ...] [output_folder]")
         sys.exit(1)
 
     args = sys.argv[1:]
